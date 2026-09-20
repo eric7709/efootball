@@ -8,6 +8,6 @@ export function useCompetitionTeams(competitionId:string) {
   return useQuery({
     queryKey: queryKeys.competitionTeams.byCompetition(competitionId),
     queryFn: ()=>competitionTeamRepository.listByCompetition(competitionId),
-    enabled: Boolean(competitionId),,
+    enabled: Boolean(competitionId),
   });
 }

@@ -8,6 +8,6 @@ export function useMatchEvidence(matchId:string) {
   return useQuery({
     queryKey: queryKeys.evidence.byMatch(matchId),
     queryFn: ()=>matchEvidenceRepository.listByMatch(matchId),
-    enabled: Boolean(matchId),,
-  });
+    enabled: Boolean(matchId),
+  })
 }
