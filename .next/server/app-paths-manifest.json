@@ -1,0 +1,7 @@
+{
+  "/admin/teams/page": "app/admin/teams/page.js",
+  "/admin/notifications/page": "app/admin/notifications/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/matches/page": "app/admin/matches/page.js",
+  "/admin/competitions/page": "app/admin/competitions/page.js"
+}
