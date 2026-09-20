@@ -9,5 +9,6 @@ export function usePlayerTeams(playerId:string) {
     queryKey: queryKeys.teamMembers.byPlayer(playerId),
     queryFn: ()=>teamMemberRepository.listByPlayer(playerId),
     enabled: Boolean(playerId),
+    
   });
 }
