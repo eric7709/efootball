@@ -8,6 +8,6 @@ export function usePlayerStatistics(playerId:string) {
   return useQuery({
     queryKey: queryKeys.playerStatistics.detail(playerId),
     queryFn: ()=>playerStatisticsRepository.getByPlayer(playerId),
-    enabled: Boolean(playerId),,
+    enabled: Boolean(playerId),
   });
 }
