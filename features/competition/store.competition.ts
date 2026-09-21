@@ -19,7 +19,9 @@ export const useCompetitionStore = create<State>((set) => ({
   modalType: null,
   selectedCompetition: null,
   setPanelOpen: (value) => set({ isPanelOpen: value }),
-  openUpdateModal: (competition) => set({ modalType: "update", selectedCompetition: competition }),
-  openDeleteModal: (competition) => set({ modalType: "delete", selectedCompetition: competition }),
+  openUpdateModal: (competition) =>
+    set({ modalType: "update", selectedCompetition: competition }),
+  openDeleteModal: (competition) =>
+    set({ modalType: "delete", selectedCompetition: competition }),
   closeModal: () => set({ modalType: null, selectedCompetition: null }),
 }));

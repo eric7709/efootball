@@ -24,12 +24,14 @@ export const queryKeys = {
     all: ["team-members"] as const,
     detail: (id: string) => ["team-members", id] as const,
     byTeam: (teamId: string) => ["team-members", "team", teamId] as const,
-    byPlayer: (playerId: string) => ["team-members", "player", playerId] as const,
+    byPlayer: (playerId: string) =>
+      ["team-members", "player", playerId] as const,
   },
   competitionTeams: {
     all: ["competition-teams"] as const,
     detail: (id: string) => ["competition-teams", id] as const,
-    byCompetition: (competitionId: string) => ["competition-teams", "competition", competitionId] as const,
+    byCompetition: (competitionId: string) =>
+      ["competition-teams", "competition", competitionId] as const,
     byTeam: (teamId: string) => ["competition-teams", "team", teamId] as const,
   },
   matches: {
@@ -49,8 +51,10 @@ export const queryKeys = {
   competitionTeamStatistics: {
     all: ["competition-team-statistics"] as const,
     detail: (id: string) => ["competition-team-statistics", id] as const,
-    byCompetition: (competitionId: string) => ["competition-team-statistics", "competition", competitionId] as const,
-    byTeam: (teamId: string) => ["competition-team-statistics", "team", teamId] as const,
+    byCompetition: (competitionId: string) =>
+      ["competition-team-statistics", "competition", competitionId] as const,
+    byTeam: (teamId: string) =>
+      ["competition-team-statistics", "team", teamId] as const,
   },
   rankings: {
     all: ["rankings"] as const,

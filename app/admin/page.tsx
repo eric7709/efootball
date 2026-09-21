@@ -11,16 +11,18 @@ const sections = [
 ];
 
 export default function AdminHomePage() {
-  return <main className="page">
-    <p className="eyebrow">ADMIN</p>
-    <h1>Management</h1>
-    <div className="grid grid-3">
-      {sections.map(([href, label]) => (
-        <Link className="panel" href={`/admin/${href}`} key={href}>
-          <h2>{label}</h2>
-          <p className="muted">Open {label.toLowerCase()} table</p>
-        </Link>
-      ))}
-    </div>
-  </main>;
+  return (
+    <main className="page">
+      <p className="eyebrow">ADMIN</p>
+      <h1>Management</h1>
+      <div className="grid grid-3">
+        {sections.map(([href, label]) => (
+          <Link className="panel" href={`/admin/${href}`} key={href}>
+            <h2>{label}</h2>
+            <p className="muted">Open {label.toLowerCase()} table</p>
+          </Link>
+        ))}
+      </div>
+    </main>
+  );
 }

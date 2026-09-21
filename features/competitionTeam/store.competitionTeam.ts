@@ -1,6 +1,9 @@
 import { create } from "zustand";
 
-interface State { isPanelOpen: boolean; setPanelOpen: (value: boolean) => void; }
+interface State {
+  isPanelOpen: boolean;
+  setPanelOpen: (value: boolean) => void;
+}
 
 export const useCompetitionteamStore = create<State>((set) => ({
   isPanelOpen: false,

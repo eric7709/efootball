@@ -1,11 +1,41 @@
 import type { Player } from "../types.player";
 
 export const playersDummy: Player[] = [
-  { id: "player-001", gamerTag: "Success10", displayName: "Success", country: "Nigeria", state: "Delta",
-    platform: "MOBILE", playerId: "EF-0010", bio: "Competitive eFootball player.", profileImage: "/avatars/success.png",
-    status: "ACTIVE", createdAt: "2026-01-10T10:00:00Z", updatedAt: "2026-01-10T10:00:00Z" },
-  { id: "player-002", gamerTag: "KingJay", displayName: "Jay", country: "Nigeria", state: "Lagos",
-    platform: "PLAYSTATION", playerId: "EF-0020", status: "ACTIVE", createdAt: "2026-02-02T10:00:00Z", updatedAt: "2026-02-02T10:00:00Z" },
-  { id: "player-003", gamerTag: "Mike10", displayName: "Mike", country: "Ghana",
-    platform: "MOBILE", playerId: "EF-0030", status: "ACTIVE", createdAt: "2026-02-20T10:00:00Z", updatedAt: "2026-02-20T10:00:00Z" }
+  {
+    id: "player-001",
+    gamerTag: "Success10",
+    displayName: "Success",
+    country: "Nigeria",
+    state: "Delta",
+    platform: "MOBILE",
+    playerId: "EF-0010",
+    bio: "Competitive eFootball player.",
+    profileImage: "/avatars/success.png",
+    status: "ACTIVE",
+    createdAt: "2026-01-10T10:00:00Z",
+    updatedAt: "2026-01-10T10:00:00Z",
+  },
+  {
+    id: "player-002",
+    gamerTag: "KingJay",
+    displayName: "Jay",
+    country: "Nigeria",
+    state: "Lagos",
+    platform: "PLAYSTATION",
+    playerId: "EF-0020",
+    status: "ACTIVE",
+    createdAt: "2026-02-02T10:00:00Z",
+    updatedAt: "2026-02-02T10:00:00Z",
+  },
+  {
+    id: "player-003",
+    gamerTag: "Mike10",
+    displayName: "Mike",
+    country: "Ghana",
+    platform: "MOBILE",
+    playerId: "EF-0030",
+    status: "ACTIVE",
+    createdAt: "2026-02-20T10:00:00Z",
+    updatedAt: "2026-02-20T10:00:00Z",
+  },
 ];

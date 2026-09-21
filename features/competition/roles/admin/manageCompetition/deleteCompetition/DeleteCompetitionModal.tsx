@@ -7,7 +7,9 @@ interface DeleteCompetitionModalProps {
   onDelete: (id: string) => void;
 }
 
-export function DeleteCompetitionModal({ onDelete }: DeleteCompetitionModalProps) {
+export function DeleteCompetitionModal({
+  onDelete,
+}: DeleteCompetitionModalProps) {
   const { modalType, selectedCompetition, closeModal } = useCompetitionStore();
   const isOpen = modalType === "delete" && selectedCompetition !== null;
 

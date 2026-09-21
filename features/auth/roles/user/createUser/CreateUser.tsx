@@ -6,7 +6,7 @@ import { CustomInput } from "@/features/shared/CustomInput";
 import { CustomSelect } from "@/features/shared/CustomSelect";
 import { FormField } from "@/features/shared/ui/FormField";
 import { SubmitButton } from "@/features/shared/ui/SubmitButton";
-import { useRegister } from "../../../hooks/useRegister";
+import { useRegister } from "../../../hooks/api.auth";
 import type { RegisterInput, UserRole } from "../../../types.auth";
 
 const roleOptions = [
@@ -24,14 +24,19 @@ const initialForm: RegisterInput = {
 };
 
 function getErrorMessage(error: unknown) {
-  return error instanceof Error ? error.message : "Unable to create the user. Please try again.";
+  return error instanceof Error
+    ? error.message
+    : "Unable to create the user. Please try again.";
 }
 
 export function CreateUser() {
   const [form, setForm] = useState<RegisterInput>(initialForm);
   const register = useRegister();
 
-  function updateField<K extends keyof RegisterInput>(field: K, value: RegisterInput[K]) {
+  function updateField<K extends keyof RegisterInput>(
+    field: K,
+    value: RegisterInput[K],
+  ) {
     setForm((currentForm) => ({
       ...currentForm,
       [field]: value,
@@ -48,11 +53,19 @@ export function CreateUser() {
   }
 
   return (
-    <form className="panel grid" onSubmit={handleSubmit} style={{ maxWidth: 560 }}>
+    <form
+      className="panel grid"
+      onSubmit={handleSubmit}
+      style={{ maxWidth: 560 }}
+    >
       <div>
-        <p className="eyebrow" style={{ margin: 0 }}>AUTHENTICATION</p>
+        <p className="eyebrow" style={{ margin: 0 }}>
+          AUTHENTICATION
+        </p>
         <h1 style={{ marginBottom: 8 }}>Create user</h1>
-        <p className="muted" style={{ margin: 0 }}>Create an account and assign its platform role.</p>
+        <p className="muted" style={{ margin: 0 }}>
+          Create an account and assign its platform role.
+        </p>
       </div>
 
       <FormField label="Display name" htmlFor="displayName">
@@ -94,7 +107,9 @@ export function CreateUser() {
           name="role"
           options={roleOptions}
           value={form.role}
-          onChange={(event) => updateField("role", event.target.value as UserRole)}
+          onChange={(event) =>
+            updateField("role", event.target.value as UserRole)
+          }
         />
       </FormField>
 

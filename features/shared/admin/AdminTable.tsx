@@ -32,7 +32,9 @@ export function AdminTable<T extends { id: string }>({
         <tbody>
           {data.length === 0 ? (
             <tr>
-              <td colSpan={columns.length} className="empty-cell">{emptyMessage}</td>
+              <td colSpan={columns.length} className="empty-cell">
+                {emptyMessage}
+              </td>
             </tr>
           ) : (
             data.map((item) => (

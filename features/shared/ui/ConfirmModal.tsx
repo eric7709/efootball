@@ -27,10 +27,15 @@ export function ConfirmModal({
     <Modal open={open} title={title} onClose={onClose}>
       <p>{message}</p>
       <div className="modal-actions">
-        <button type="button" className="button secondary" onClick={onClose}>
+        <button type="button" className="modal-cancel-button" onClick={onClose}>
           Cancel
         </button>
-        <SubmitButton type="button" loading={loading} onClick={onConfirm}>
+        <SubmitButton
+          type="button"
+          variant="modal"
+          loading={loading}
+          onClick={onConfirm}
+        >
           {confirmLabel}
         </SubmitButton>
       </div>

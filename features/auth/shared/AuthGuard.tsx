@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-import { useCurrentUser } from "../hooks/useCurrentUser";
+import { useCurrentUser } from "../hooks/api.auth";
 import { useAuthStore } from "../store.auth";
 
 interface AuthGuardProps {

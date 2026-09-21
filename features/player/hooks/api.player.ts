@@ -1,4 +1,7 @@
 import { api } from "@/lib/api/axios";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+
+import { queryKeys } from "@/lib/api/query-keys";
 
 import type {
   CreatePlayerInput,
@@ -27,3 +30,56 @@ export const playerRepository = {
     await api.delete(`/players/${id}`);
   },
 };
+
+export function usePlayer(id: string) {
+  return useQuery({
+    queryKey: queryKeys.players.detail(id),
+    queryFn: () => playerRepository.getById(id),
+    enabled: Boolean(id),
+  });
+}
+
+export function usePlayers() {
+  return useQuery({
+    queryKey: queryKeys.players.all,
+    queryFn: playerRepository.list,
+  });
+}
+
+export function useCreatePlayer() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (input: CreatePlayerInput) => playerRepository.create(input),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: queryKeys.players.all }),
+  });
+}
+
+export function useDeletePlayer() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (id: string) => playerRepository.delete(id),
+    onSuccess: (_result, id) => {
+      queryClient.removeQueries({ queryKey: queryKeys.players.detail(id) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.players.all });
+    },
+  });
+}
+
+export function useUpdatePlayer() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: ({ id, input }: { id: string; input: UpdatePlayerInput }) =>
+      playerRepository.update(id, input),
+    onSuccess: (player) => {
+      queryClient.setQueryData(queryKeys.players.detail(player.id), player);
+      queryClient.invalidateQueries({ queryKey: queryKeys.players.all });
+    },
+  });
+}
+
+export const useGetAllPlayers = usePlayers;
+export const useGetPlayer = usePlayer;
