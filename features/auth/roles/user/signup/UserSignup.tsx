@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
@@ -103,6 +104,9 @@ export function UserSignup() {
         </p>
       ) : null}
       <SubmitButton loading={register.isPending}>Create account</SubmitButton>
+      <p className="auth-switch">
+        Already have an account? <Link href="/login">Sign in</Link>
+      </p>
     </form>
   );
 }

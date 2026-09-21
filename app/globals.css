@@ -251,6 +251,19 @@ button {
 .muted {
   color: var(--muted, #8d95a8);
 }
+.auth-switch {
+  margin: -4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+.auth-switch a {
+  color: #2563eb;
+  font-weight: 700;
+}
+.auth-switch a:hover {
+  text-decoration: underline;
+}
 .table-container {
   overflow: auto;
 }
