@@ -46,11 +46,7 @@ export function UserSignup() {
   }
 
   return (
-    <form
-      className="panel grid"
-      onSubmit={handleSubmit}
-      style={{ maxWidth: 460 }}
-    >
+    <form className="panel grid auth-panel" onSubmit={handleSubmit}>
       <div>
         <p className="eyebrow" style={{ margin: 0 }}>
           JOIN THE PLATFORM

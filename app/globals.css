@@ -45,6 +45,45 @@ button {
   margin: 0 auto;
   padding: 40px 24px;
 }
+.auth-page {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+}
+.auth-page-content {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  width: min(380px, 100%);
+}
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+.auth-brand .home-brand-mark {
+  width: 42px;
+  height: 42px;
+}
+.auth-brand strong,
+.auth-brand small {
+  display: block;
+}
+.auth-brand strong {
+  font-size: 16px;
+  letter-spacing: -0.04em;
+}
+.auth-brand small {
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+.auth-panel {
+  width: min(380px, 100%);
+}
 .panel {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -386,12 +425,12 @@ button {
     transform 0.12s ease;
 }
 .modal-submit-button {
-  border-color: #2563eb;
-  background: #dbeafe;
-  color: #1d4ed8;
+  border-color: #15803d;
+  background: #dcfce7;
+  color: #166534;
 }
 .modal-submit-button:hover {
-  background: #bfdbfe;
+  background: #bbf7d0;
 }
 .modal-cancel-button {
   border-color: #9ca3af;
@@ -1057,7 +1096,7 @@ button {
   min-height: 100vh;
   overflow: clip;
   padding: 28px clamp(22px, 5vw, 80px) 44px;
-  background: #0a1d38;
+  background: #052e16;
   color: #f7faff;
 }
 .home-page::before {
@@ -1067,10 +1106,10 @@ button {
   background:
     radial-gradient(
       circle at 69% 33%,
-      rgba(35, 106, 204, 0.22),
+      rgba(121, 255, 177, 0.34),
       transparent 28%
     ),
-    linear-gradient(118deg, #071a32, #0c2850 53%, #071a32);
+    linear-gradient(118deg, #020805, #166534 53%, #052e16);
   content: "";
 }
 .home-page::after {
@@ -1079,8 +1118,8 @@ button {
   inset: 0;
   opacity: 0.22;
   background-image:
-    linear-gradient(rgba(185, 213, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(185, 213, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(187, 247, 208, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(187, 247, 208, 0.045) 1px, transparent 1px);
   background-size: 42px 42px;
   content: "";
   mask-image: linear-gradient(to bottom, #000, transparent 86%);
@@ -1097,14 +1136,14 @@ button {
   right: 17%;
   width: 380px;
   height: 380px;
-  background: rgba(32, 113, 231, 0.13);
+  background: rgba(74, 222, 128, 0.23);
 }
 .home-glow-two {
   bottom: -180px;
   left: 22%;
   width: 420px;
   height: 270px;
-  background: rgba(33, 91, 172, 0.12);
+  background: rgba(34, 197, 94, 0.22);
 }
 .home-nav {
   position: sticky;
@@ -1117,11 +1156,11 @@ button {
   width: min(1320px, 100%);
   margin: auto;
   padding: 10px 14px;
-  border: 1px solid rgba(166, 207, 255, 0.16);
+  border: 1px solid rgba(159, 228, 185, 0.16);
   border-radius: 15px;
-  background: rgba(7, 24, 48, 0.72);
+  background: rgba(3, 5, 8, 0.82);
   box-shadow:
-    0 12px 30px rgba(0, 8, 23, 0.2),
+    0 12px 30px rgba(0, 0, 0, 0.34),
     inset 0 1px rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(18px);
 }
@@ -1179,7 +1218,7 @@ button {
   padding: 10px 15px;
   border: 1px solid rgba(170, 204, 247, 0.26);
   border-radius: 9px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   font-size: 12px;
   font-weight: 600;
@@ -1300,8 +1339,8 @@ button {
   border-radius: 32px;
   background: linear-gradient(
     130deg,
-    rgba(56, 127, 225, 0.18),
-    rgba(23, 56, 101, 0.07)
+    rgba(5, 8, 12, 0.42),
+    rgba(23, 56, 101, 0.1)
   );
   box-shadow:
     inset 0 1px rgba(215, 235, 255, 0.12),
@@ -1515,8 +1554,10 @@ button {
   padding: 22px 26px;
   border: 1px solid rgba(166, 204, 245, 0.15);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.045);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.07);
+  background: rgba(2, 4, 6, 0.58);
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.2),
+    inset 0 1px rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(14px);
 }
 .home-bottom-card p {
@@ -2022,4 +2063,193 @@ button {
   .home-footer > div {
     gap: 13px;
   }
+}
+
+.home-match-card,
+.home-floating-card {
+  background: linear-gradient(
+    135deg,
+    rgba(12, 77, 42, 0.82),
+    rgba(1, 12, 6, 0.88)
+  );
+  box-shadow:
+    0 22px 44px rgba(0, 0, 0, 0.36),
+    inset 0 1px rgba(225, 255, 235, 0.15);
+}
+.home-competition-info {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 80, 43, 0.42),
+    rgba(0, 11, 5, 0.46)
+  );
+}
+
+/* Homepage emerald palette */
+.home-brand-mark {
+  border-color: rgba(177, 255, 205, 0.44);
+  background: linear-gradient(145deg, #39bf72, #117341);
+  box-shadow: 0 8px 22px rgba(11, 113, 59, 0.36);
+}
+.home-brand small,
+.home-nav-links a,
+.home-login,
+.home-intro,
+.home-stats span {
+  color: #b3d9bd;
+}
+.home-nav-cta {
+  border-color: rgba(182, 255, 208, 0.28);
+}
+.home-nav-cta span,
+.home-kicker,
+.home-hero h1 em {
+  color: #a2efbd;
+}
+.home-kicker span {
+  background: #7eeaa4;
+}
+.home-primary-cta {
+  background: #e5faeb;
+  color: #075a30;
+  box-shadow: 0 10px 26px rgba(1, 56, 26, 0.28);
+}
+.home-secondary-cta {
+  color: #dcf9e5;
+}
+.home-play-icon {
+  border-color: rgba(184, 250, 205, 0.4);
+  color: #a8f3c1;
+}
+.home-visual-grid {
+  border-color: rgba(154, 244, 188, 0.18);
+  background: linear-gradient(
+    130deg,
+    rgba(43, 174, 101, 0.26),
+    rgba(14, 91, 51, 0.14)
+  );
+  box-shadow:
+    inset 0 1px rgba(223, 255, 234, 0.15),
+    0 36px 80px rgba(0, 38, 17, 0.3);
+}
+.home-visual-grid::before,
+.home-orbit {
+  border-color: rgba(174, 251, 202, 0.2);
+}
+.home-visual-grid::after {
+  border-color: rgba(174, 251, 202, 0.2);
+}
+.home-match-card,
+.home-floating-card {
+  border-color: rgba(177, 246, 201, 0.24);
+  background: linear-gradient(
+    135deg,
+    rgba(21, 111, 63, 0.8),
+    rgba(5, 57, 31, 0.76)
+  );
+  box-shadow:
+    0 22px 44px rgba(0, 34, 14, 0.28),
+    inset 0 1px rgba(225, 255, 235, 0.15);
+}
+.home-match-header,
+.home-match-footer,
+.home-match-header > span:last-child,
+.home-score i,
+.home-ranking-card > span,
+.home-ranking-card small,
+.home-fixture-card > span,
+.home-fixture-card small {
+  color: #b2d8bf;
+}
+.home-live-dot {
+  background: #6bf29c;
+  box-shadow: 0 0 9px #6bf29c;
+}
+.home-crest-titans,
+.home-winner-crest {
+  background: linear-gradient(140deg, #40b979, #135f39);
+}
+.home-crest-warriors,
+.home-player-avatar {
+  background: linear-gradient(140deg, #59b986, #1c5d3d);
+}
+.home-score span,
+.home-ranking-card > strong,
+.home-fixture-card > strong span {
+  color: #91f0b4;
+}
+.home-bottom-card,
+.home-winner-card,
+.home-leaderboard-card {
+  border-color: rgba(177, 246, 201, 0.18);
+}
+.home-bottom-card p,
+.home-section-heading p,
+.home-winner-card > p,
+.home-card-title p,
+.home-community > p {
+  color: #9ce9b5;
+}
+.home-bottom-card a,
+.home-section-heading > a,
+.home-card-title > a,
+.home-winner-card a {
+  color: #b5f4c8;
+}
+.home-competition-showcase {
+  border-color: rgba(177, 246, 201, 0.2);
+}
+.home-competition-art {
+  background:
+    radial-gradient(
+      circle at 45% 36%,
+      rgba(91, 236, 145, 0.42),
+      transparent 24%
+    ),
+    linear-gradient(145deg, #12643c, #093b25 68%, #051e12);
+}
+.home-competition-art em,
+.home-competition-art > strong {
+  color: #a3f0bb;
+}
+.home-art-ring {
+  border-color: rgba(191, 255, 211, 0.2);
+}
+.home-competition-info {
+  background: linear-gradient(
+    135deg,
+    rgba(24, 119, 67, 0.38),
+    rgba(5, 51, 28, 0.28)
+  );
+}
+.home-active-label {
+  color: #a6f6c1;
+}
+.home-active-label span {
+  background: #7cf0a6;
+  box-shadow: 0 0 10px #7cf0a6;
+}
+.home-competition-info > p,
+.home-competition-meta span,
+.home-player-row small,
+.home-winner-card small {
+  color: #b0cfba;
+}
+.home-register-cta {
+  border-color: rgba(183, 255, 209, 0.3);
+  background: rgba(148, 255, 188, 0.13);
+  color: #e0fae8;
+}
+.home-community h2 em {
+  color: #9cedb8;
+}
+.home-community > div span {
+  border-color: rgba(177, 246, 201, 0.2);
+  color: #b3d8bf;
+}
+.home-footer {
+  border-color: rgba(177, 246, 201, 0.16);
+  color: #a8cbb1;
+}
+.home-footer > div a:hover {
+  color: #c4f3d1;
 }

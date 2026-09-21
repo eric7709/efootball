@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
@@ -37,11 +38,7 @@ export function UserLogin() {
   }
 
   return (
-    <form
-      className="panel grid"
-      onSubmit={handleSubmit}
-      style={{ maxWidth: 460 }}
-    >
+    <form className="panel grid auth-panel" onSubmit={handleSubmit}>
       <div>
         <p className="eyebrow" style={{ margin: 0 }}>
           WELCOME BACK
@@ -83,6 +80,9 @@ export function UserLogin() {
         </p>
       ) : null}
       <SubmitButton loading={login.isPending}>Sign in</SubmitButton>
+      <p className="auth-switch">
+        Don&apos;t have an account? <Link href="/signup">Create one</Link>
+      </p>
     </form>
   );
 }
